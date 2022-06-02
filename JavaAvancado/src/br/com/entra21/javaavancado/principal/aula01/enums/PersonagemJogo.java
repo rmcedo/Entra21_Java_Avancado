@@ -2,11 +2,11 @@ package br.com.entra21.javaavancado.principal.aula01.enums;
 
 public enum PersonagemJogo {
 
-	BARBARO(1000, "Muito HP"), // Barbaro
-	ANAO(100, "Ferreiro"), // Anão
-	DRUIDA(50, "Suporte"), // Druida
-	SACERDOTE(10, "Curar e correr"), // Sacerdote
-	MAGO(20, "Faz altas magias");
+	BARBARO(1000, "Muito HP"), // Barbaro // [0]
+	ANAO(100, "Ferreiro"), // Anão // [1]
+	DRUIDA(50, "Suporte"), // Druida // [2]
+	SACERDOTE(10, "Curar e correr"), // Sacerdote // [3]
+	MAGO(20, "Faz altas magias"); // [4]
 
 	private final int HP;
 	private final String DESCRICAO;
