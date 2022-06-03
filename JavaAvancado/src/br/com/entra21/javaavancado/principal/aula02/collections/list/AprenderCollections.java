@@ -1,6 +1,7 @@
 package br.com.entra21.javaavancado.principal.aula02.collections.list;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class AprenderCollections {
@@ -126,6 +127,61 @@ public class AprenderCollections {
 		
 
 	private static void aprenderLinkedList() {
+		
+		LinkedList<String> nomes = new LinkedList<>();
+
+
+		System.out.println("---------------Inserindo itens no LINKED ------------------");
+		nomes.add("Rubem");
+		nomes.add("Fulano");
+		nomes.addFirst("Teste");
+		nomes.addLast("Ultimo");
+		nomes.add(2, "Inserido");
+
+		System.out.println("Quantos nomes? "+nomes.size());
+
+
+		System.out.println("---------------Acessando itens no LINKED ------------------");
+		System.out.println("Quem é o primeiro? " + nomes.getFirst());
+		System.out.println("Quem é o segundo? " + nomes.get(1));
+		System.out.println("Quem é o ultimo? " + nomes.getLast()); 
+				
+		 
+		System.out.println("---------------Percorrendo itens no LINKED com iteração em array------------------");
+		System.out.println("Ordem de inserção");
+		for (String nome : nomes) {
+			System.out.println("nome = " + nome);
+		} 
+
+
+		System.out.println("---------------Percorrendo itens no LINKED com index em array------------------");
+		System.out.println("De forma inversa");
+		for (int nome = nomes.size() - 1; nome >= 0; nome--) {
+
+			System.out.println("(" + nome + ") cargo = " + nomes.get(nome));
+
+		} 
+
+
+		System.out.println("---------------Removendo itens no LINKED ------------------");
+		System.out.println("Removendo quem estava no indice 0 ou seja "+nomes.getFirst());
+		nomes.removeFirst();//removi o item no indice 0
+
+
+		System.out.println("Removendo quem tem o nome \"Fulano\" pelo valor, sem saber que esta no indice "+nomes.indexOf("Fulano"));
+		nomes.remove("Fulano");//remove o elemento que tiver esse valor, o indice será procurado
+
+		System.out.println("---------------Percorrendo itens no LINKED com forEach------------------");
+		nomes.forEach(nome -> {     System.out.println("nome " + nome);
+		});
+
+
+			
+
+		
+		
+		
+		
 
 	}
 

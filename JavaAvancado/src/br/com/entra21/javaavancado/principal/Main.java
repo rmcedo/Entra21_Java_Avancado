@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import br.com.entra21.javaavancado.principal.aula01.enums.PersonagemJogo;
 import br.com.entra21.javaavancado.principal.aula02.collections.list.AprenderCollections;
+import br.com.entra21.javaavancado.principal.aula03.Aula03;
 
 public class Main {
 
@@ -40,6 +41,9 @@ public class Main {
 			case 3:
 				AprenderCollections.aprender();
 				break;
+			case 4:
+				Aula03.aprender();
+				break;
 
 			default:
 				System.out.println("\n\nPor favor, selecione uma opção válida");
@@ -54,11 +58,12 @@ public class Main {
 
 		String menu = "\n\t\tJAVA AVANÇADO!";
 
-		menu += "\n0 - SAIR";
-		menu += "\n1 - WRAPPER";
-		menu += "\n2 - ENUM";
-		menu += "\n3 - COLLECTIONS-LIST";
-		menu += "\nESCOLHA UMA DAS OPÇÕES";
+		menu += "\n\t0 - SAIR";
+		menu += "\n\t1 - WRAPPER";
+		menu += "\n\t2 - ENUM";
+		menu += "\n\t3 - COLLECTIONS-LIST";
+		menu += "\n\t4 - ANNOTATIONS E DATAS";
+		menu += "\n\tESCOLHA UMA DAS OPÇÕES";
 
 		return menu;
 	}
