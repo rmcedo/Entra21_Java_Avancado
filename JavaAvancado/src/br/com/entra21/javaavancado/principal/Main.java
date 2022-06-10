@@ -1,10 +1,16 @@
 package br.com.entra21.javaavancado.principal;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
+import br.com.entra21.javaavancado.Repositorio;
 import br.com.entra21.javaavancado.principal.aula01.enums.PersonagemJogo;
 import br.com.entra21.javaavancado.principal.aula02.collections.list.AprenderCollections;
 import br.com.entra21.javaavancado.principal.aula03.Aula03;
+import br.com.entra21.javaavancado.principal.aula04.Aula04;
+import br.com.entra21.javaavancado.principal.aula05.Aula05;
+import br.com.entra21.javaavancado.principal.aula06.Aula06;
 
 public class Main {
 
@@ -17,6 +23,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		byte option;
+		Repositorio.inicializarPessoas();
 
 		do {
 			System.out.println(exibirMenu());
@@ -35,7 +42,6 @@ public class Main {
 
 			case 2:
 				aprenderEnum();
-
 				break;
 
 			case 3:
@@ -43,6 +49,26 @@ public class Main {
 				break;
 			case 4:
 				Aula03.aprender();
+				break;
+			case 5:
+				String titulo = "Aula04 - Collections - SET - HashSet";
+
+				ArrayList<String> assuntos = new ArrayList<>();
+				assuntos.add("Definir");
+				assuntos.add("CRUD");
+
+				Aula04 aula04 = new Aula04(titulo, assuntos);
+				aula04.aprender();
+				break;
+			case 6:
+				new Aula05("Aula05 - Collections - MAP - HashMap",
+						new ArrayList<>(
+								Arrays.asList("Definir", "Create", "Read", "Update", "Delete", "Exemplo prático")))
+						.aprender();
+				break;
+			case 7:
+				new Aula06("Aula 06", new ArrayList<>(Arrays.asList("Aprender Generics", "Listar Pessoas",
+						"Adicionar Pessoa", "Editar Pessoa", "Deletar Pessoa"))).aprender();
 				break;
 
 			default:
@@ -56,14 +82,16 @@ public class Main {
 
 	private static String exibirMenu() {
 
-		String menu = "\n\t\tJAVA AVANÇADO!";
-
+		String menu = "\n\t\tJAVA AVANÇADO!\n\n";
+		menu += "\n\tESCOLHA UMA DAS OPÇÕES:";
 		menu += "\n\t0 - SAIR";
 		menu += "\n\t1 - WRAPPER";
 		menu += "\n\t2 - ENUM";
-		menu += "\n\t3 - COLLECTIONS-LIST";
+		menu += "\n\t3 - COLLECTIONS -> LIST";
 		menu += "\n\t4 - ANNOTATIONS E DATAS";
-		menu += "\n\tESCOLHA UMA DAS OPÇÕES";
+		menu += "\n\t5 - COLLECTIONS -> HASH-SET";
+		menu += "\n\t6 - COLLECTIONS -> HASH-MAP";
+		menu += "\n\t7 - GENERICS E PRÁTICA";
 
 		return menu;
 	}
