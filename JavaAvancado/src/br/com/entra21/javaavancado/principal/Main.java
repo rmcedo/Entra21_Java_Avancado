@@ -11,6 +11,8 @@ import br.com.entra21.javaavancado.principal.aula03.Aula03;
 import br.com.entra21.javaavancado.principal.aula04.Aula04;
 import br.com.entra21.javaavancado.principal.aula05.Aula05;
 import br.com.entra21.javaavancado.principal.aula06.Aula06;
+import br.com.entra21.javaavancado.principal.aula07.Aula07;
+import br.com.entra21.javaavancado.principal.aula08.Aula08;
 
 public class Main {
 
@@ -51,7 +53,7 @@ public class Main {
 				Aula03.aprender();
 				break;
 			case 5:
-				String titulo = "Aula04 - Collections - SET - HashSet";
+				String titulo = "AULA 4 - Collections - SET - HashSet";
 
 				ArrayList<String> assuntos = new ArrayList<>();
 				assuntos.add("Definir");
@@ -61,18 +63,33 @@ public class Main {
 				aula04.aprender();
 				break;
 			case 6:
-				new Aula05("Aula05 - Collections - MAP - HashMap",
+				new Aula05("AULA 5 - Collections - MAP - HashMap",
 						new ArrayList<>(
-								Arrays.asList("Definir", "Create", "Read", "Update", "Delete", "Exemplo prático")))
+								Arrays.asList("Definir", "Create", "Read", "Update", "Delete", "Exemplo prï¿½tico")))
 						.aprender();
 				break;
 			case 7:
-				new Aula06("Aula 06", new ArrayList<>(Arrays.asList("Aprender Generics", "Listar Pessoas",
+				new Aula06("AULA 6", new ArrayList<>(Arrays.asList("Aprender Generics", "Listar Pessoas",
 						"Adicionar Pessoa", "Editar Pessoa", "Deletar Pessoa"))).aprender();
+				break;
+			case 8:
+				ArrayList<String> assunto = new ArrayList<>();
+				assunto.add("Tratamento de Erro");
+				assunto.add("Obter detalhes do Erro");
+				assunto.add("Custom exception");
+				new Aula07("AULA 7", assunto).aprender();
+				break;
+			case 9:
+				ArrayList<String> topico = new ArrayList<>();
+				topico.add("Aprender Listar");
+				topico.add("Aprender Filtrar");
+				topico.add("Aprender Estatisticas");
+				topico.add("Aprender Ordenacao");
+				new Aula08("AULA 8", topico).aprender();
 				break;
 
 			default:
-				System.out.println("\n\nPor favor, selecione uma opção válida");
+				System.out.println("\n\nPor favor, selecione uma opcao valida");
 				break;
 			}
 
@@ -82,8 +99,8 @@ public class Main {
 
 	private static String exibirMenu() {
 
-		String menu = "\n\t\tJAVA AVANÇADO!\n\n";
-		menu += "\n\tESCOLHA UMA DAS OPÇÕES:";
+		String menu = "\n\t\tJAVA AVANï¿½ADO!\n\n";
+		menu += "\n\tESCOLHA UMA DAS OPCOES:";
 		menu += "\n\t0 - SAIR";
 		menu += "\n\t1 - WRAPPER";
 		menu += "\n\t2 - ENUM";
@@ -91,7 +108,9 @@ public class Main {
 		menu += "\n\t4 - ANNOTATIONS E DATAS";
 		menu += "\n\t5 - COLLECTIONS -> HASH-SET";
 		menu += "\n\t6 - COLLECTIONS -> HASH-MAP";
-		menu += "\n\t7 - GENERICS E PRÁTICA";
+		menu += "\n\t7 - GENERICS E PRATICA";
+		menu += "\n\t8 - EXCESSOES E TRATAMENTOS DE ERROS";
+		menu += "\n\t9 - FUNÃ‡Ã•ES LAMBDA";
 
 		return menu;
 	}
@@ -111,7 +130,7 @@ public class Main {
 		long inteiroQuatro = Long.parseLong("10000000");
 
 		float decimalUm = Float.parseFloat("144.450");
-		// double decimalDois = Double.parseDouble("144,450 "); NÃO FUNCIONA COM VIRGULA
+		// double decimalDois = Double.parseDouble("144,450 "); Nï¿½O FUNCIONA COM VIRGULA
 
 	}
 
@@ -119,9 +138,9 @@ public class Main {
 		System.out.println("Testando Enum: " + DiasSemana.SABADO);
 
 		boolean hoje = DiasSemana.DOMINGO == DiasSemana.SEGUNDA;
-		System.out.println(DiasSemana.DOMINGO == DiasSemana.SEGUNDA ? "Sim" : "Não");
+		System.out.println(DiasSemana.DOMINGO == DiasSemana.SEGUNDA ? "Sim" : "Nï¿½o");
 
-		System.out.println(hoje ? "Sim" : "Não");
+		System.out.println(hoje ? "Sim" : "Nï¿½o");
 
 		for (int dia = 0; dia < DiasSemana.values().length; dia++) {
 			System.out.println((dia + 1) + " - " + DiasSemana.values()[dia]); // NOVO MODO DE FAZER UM MENU
@@ -132,8 +151,8 @@ public class Main {
 		System.out.println(
 				"\n Geralmente a classe " + PersonagemJogo.SACERDOTE + " tem HP = " + PersonagemJogo.SACERDOTE.getHP());
 
-		System.out.println("\nO mago está no indice do Enum: [" + PersonagemJogo.MAGO.ordinal() + "]");
-		System.out.println("\n Geralmente a classe " + PersonagemJogo.SACERDOTE + " tem como característica = "
+		System.out.println("\nO mago estï¿½ no indice do Enum: [" + PersonagemJogo.MAGO.ordinal() + "]");
+		System.out.println("\n Geralmente a classe " + PersonagemJogo.SACERDOTE + " tem como caracterï¿½stica = "
 				+ PersonagemJogo.SACERDOTE.getDESCRICAO());
 		System.out.println("\n" + PersonagemJogo.BARBARO.getDetails());
 
@@ -149,7 +168,7 @@ public class Main {
 		for (PersonagemJogo variavel : PersonagemJogo.values()) {
 			System.out.println(variavel.ordinal() + " - " + variavel.getDetails());
 		}
-		System.out.println("\tO Druida está na posição [" + PersonagemJogo.DRUIDA.ordinal() + "]");
+		System.out.println("\tO Druida esta na posiÃ§Ã£o [" + PersonagemJogo.DRUIDA.ordinal() + "]");
 	}
 
 }
